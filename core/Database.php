@@ -22,7 +22,7 @@ class Database
         );
         try {
             $this->provider = new PDO('mysql:host=' . $this->DB_HOST . ';port=' . $this->DB_PORT . ';dbname=' . $this->DB_NAME . ';charset=' . $this->DB_CHARSET, $this->DB_USER, $this->DB_PASS, $options);
-        } catch (\PDOException $e) {
+        } catch (PDOException $e) {
             $this->setErrorDB($e->getMessage() . $e->getCode());
 
             if (APP_MODE == 'debug') {
